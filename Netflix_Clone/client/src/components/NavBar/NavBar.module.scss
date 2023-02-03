@@ -1,0 +1,131 @@
+.navbar {
+  color: white;
+  font-size: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.3) 50%);
+  padding: 0.5rem 0;
+
+  &.scrolled {
+    background-color: black;
+  }
+
+  .selectable {
+    cursor: pointer;
+  }
+
+  .container {
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .left {
+      @media only screen and (max-width: 900px) {
+        display: none;
+      }
+
+      .link {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .icon {
+        width: 8rem;
+      }
+    }
+
+    .phone_size_left {
+      display: none;
+      position: relative;
+
+      @media only screen and (max-width: 900px) {
+        display: flex;
+      }
+
+      .menu {
+        background: black;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 0.5rem 1rem;
+      }
+
+      .menuList {
+        position: absolute;
+        display: none;
+        top: 3rem;
+        left: 10rem;
+        width: 10rem;
+        background: black;
+        padding: 0.5rem 1rem;
+
+        &.show {
+          display: block;
+        }
+      }
+
+      .link {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .icon {
+        width: 8rem;
+      }
+    }
+
+    .right {
+      .avatar {
+        width: 3rem;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .profileOption {
+        position: relative;
+
+        .optionsIcon {
+          cursor: pointer;
+
+          &:hover + .options {
+            opacity: 1;
+          }
+        }
+
+        .options {
+          position: absolute;
+          top: 3rem;
+          right: -1rem;
+          background: black;
+          text-align: center;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+
+          &:hover {
+            opacity: 1;
+          }
+
+          li {
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            padding: 1rem 2rem;
+            width: 100%;
+
+            &:hover {
+              background-color: var(--light);
+            }
+          }
+        }
+      }
+    }
+  }
+}
